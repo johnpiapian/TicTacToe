@@ -8,10 +8,7 @@ namespace TicTacToe
     class ComputerPlayer : Player
     {
 
-        public ComputerPlayer()
-        {
-            pieces = new BitArray(9, false);
-        }
+        public ComputerPlayer() : base(9) { }
 
         public override void MakeMove(int position)
         {

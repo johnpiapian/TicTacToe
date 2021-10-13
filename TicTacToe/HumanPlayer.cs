@@ -9,10 +9,7 @@ namespace TicTacToe
     class HumanPlayer : Player
     {
 
-        public HumanPlayer()
-        {
-            pieces = new BitArray(9, false);
-        }
+        public HumanPlayer() : base(9) {}
 
         public override void MakeMove(int position)
         {

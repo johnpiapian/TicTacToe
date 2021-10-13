@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections;
 
 namespace TicTacToe
 {
@@ -9,9 +6,9 @@ namespace TicTacToe
     {
         protected BitArray pieces;
 
-        public Player()
+        public Player(int arraySize)
         {
-            pieces = new BitArray(9, false);
+            pieces = new BitArray(arraySize, false);
         }
 
         public BitArray Pieces
