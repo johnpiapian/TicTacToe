@@ -99,7 +99,10 @@ namespace TicTacToe
                     result = gameBoard.IsWinner(playerY);
 
                 if (result)
-                    io.AnnounceWinner(gamePlayer);
+                    if(gamePlayer.Equals("X")) //human player
+                        io.AnnounceWinner(playerX.PlayerName);
+                    else
+                        io.AnnounceWinner(playerY.PlayerName);
                 else
                     tieGame = gameBoard.IsFull();
 
@@ -107,7 +110,7 @@ namespace TicTacToe
                     io.IsTie();
 
                 if (gamePlayer == "X")
-                    gamePlayer = "Y";
+                    gamePlayer = "O";
                 else
                     gamePlayer = "X";
             }
@@ -117,12 +120,13 @@ namespace TicTacToe
 
         public int IsPlaying()
         {
-            int userselection = io.GetInt($"Player {gamePlayer}, choose your location: ", 1);
+            string playerName = gamePlayer.Equals("X") ? playerX.PlayerName : playerY.PlayerName;
+            int userselection = io.GetInt($"{playerName}, choose your location: ", 1);
 
             while(userselection > 8 || gameArray[userselection] != " ")
             {
                 io.Print("Please enter a free number between 1 and 8 that appears on the grid");
-                userselection = io.GetInt($"Player {gamePlayer}, choose your location: ", 1);
+                userselection = io.GetInt($"{playerName}, choose your location: ", 1);
             }
 
             if (gamePlayer == "X")

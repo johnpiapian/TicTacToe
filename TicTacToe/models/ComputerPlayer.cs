@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
 using System.Text;
 
 namespace TicTacToe
 {
-    class HumanPlayer : Player
+    class ComputerPlayer : Player
     {
+        public static string name = "Computer";
 
-        public HumanPlayer() : base(9) {}
+        public ComputerPlayer() : base(9, name) {}
 
         public override void MakeMove(int position)
         {

@@ -95,7 +95,7 @@ namespace TicTacToe
         public void AnnounceWinner(string gamePlayer)
         {
             Console.WriteLine("\n\n");
-            Console.WriteLine("Player {0} has won the game!", gamePlayer);
+            Console.WriteLine("{0} has won the game!", gamePlayer);
             Console.WriteLine("\n\n");
         }
     }
